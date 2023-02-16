@@ -291,7 +291,9 @@ public class MainActivity extends AppCompatActivity {
 
                 OkHttpClient client = new OkHttpClient();
                 RequestBody body = RequestBody.create(jsonSpeechResults, MediaType.parse("application/json"));
-                Request request = new Request.Builder().url(url).addHeader("Authorization", "Bearer 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").post(body).build();
+                Request request = new Request.Builder().url(url).addHeader("Authorization", API_KEY).post(body).build();
+                //Note: API_KEY is replaced with my client's actual api key in the real code. I just replaced the client's api key with API_KEY
+                //here on Github for the security of the client.
 
                 try  {
                     client.newCall(request).enqueue(new Callback() {
